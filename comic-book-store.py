@@ -27,7 +27,7 @@ comicBooks = [
 #Images
 @route('/image/<filename>')
 def server_static(filename):
-    return static_file(filename, root='./assets/images')
+    return static_file(filename, root='./assets')
 
 
 #Code to be able to link custom css Ver1.1
