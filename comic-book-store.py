@@ -56,8 +56,21 @@ def book_list():
     data = dict(comics = comicBooks)
     return data
 
+#Ver1.3 Book List Success Page
+@route('/book-list-success/<comic_id>')
+@view('book-list-success')
+def book_list_success(comic_id):
+    comic_id = int(comic_id)
+    found_comic = None
+    for comic in comicBooks:
+        if comic.id == comic_id:
+            found_comic = comic
+            break
+    data = dict(comic = found_comic)
+    found_comic.stock -= 1
+    return data 
 
-
+    
 #reloader = True breaks the code? Only at home PC though???? apparantly is a server issue
 run(host='localhost', port=8080, debug=True)
 #run(host='0.0.0.0', port=8080, reloader= True, debug=True)
