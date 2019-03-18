@@ -20,9 +20,9 @@ class ComicBook:
 
 #ver1.0 Creatioon of test data       
 comicBooks = [
-    ComicBook("Water Woman", 0, 19.99, "This book sucks, don't buy it.", "image/bookstore-cat.jpg"),
-    ComicBook("Not Water Woman", 13, 15.99, "This book is very good thus you should buy it.", "image/bookstore-cat.jpg"),
-    ComicBook("Wagon Wars", 26, 8.49, "In a world full of wagons, one wagon will destroy them all!", "image/bookstore-cat.jpg")
+    ComicBook("Water Woman", 0, 19.99, "This book sucks, don't buy it.", "/image/bookstore-cat.jpg"),
+    ComicBook("Not Water Woman", 13, 15.99, "This book is very good thus you should buy it.", "/image/bookstore-cat.jpg"),
+    ComicBook("Wagon Wars", 26, 8.49, "In a world full of wagons, one wagon will destroy them all!", "/image/bookstore-cat.jpg")
     ]
 
 #Images
@@ -67,9 +67,21 @@ def book_list_success(comic_id):
             found_comic = comic
             break
     data = dict(comic = found_comic)
-    found_comic.stock -= 1
     return data 
 
+#Ver1.3 Buy book success page
+@route('/buy-book-success/<comic_id>', method="POST")
+@view('buy-book-success')
+def buy_book_success(comic_id):
+    comic_id = int(comic_id)
+    found_comic = None
+    for comic in comicBooks:
+        if comic.id == comic_id:
+            found_comic = comic
+            break
+    data = dict(comic = found_comic)
+    found_comic.stock -= 1
+    return data     
     
 #reloader = True breaks the code? Only at home PC though???? apparantly is a server issue
 run(host='localhost', port=8080, debug=True)

@@ -10,24 +10,27 @@
 		<div class="container white">
 		
 			<!-- Title -->
-			<h2 class="center-align"> HERE IS THE BOOK YOU ARE LOOKING FOR</h2>
+			<h2 class="center-align"> Congratulations! The book will be sent you you straight away</h2>
 			<div style="margin-left: 10px; margin-right: 10px;" class="divider"></div>
 			
 			<div class="row">
 			
+				<!-- Main Image -->
 				<div class = "col m4"> 
 					 <img class="responsive-img" width="400" src="{{comic.image}}">
 				</div>
+				
+				<!-- Description -->
 				<div class = "col m4">
 					<h3> {{comic.title}} </h3>
 					<p> {{comic.description}} <br /><br /><br /><br /></p>
 					<h5> In stock: {{comic.stock}} </h5>
 					
-					<form action="/buy-book-success/{{comic.id}}" method="POST">
-						<button class="button6" type="submit" >Buy Now</button>
-					</form>
-				
+					<!-- Back buttons -->
+					<a href="/book-list" class="button6">Back to Shopping</a>
+					<a href="/"> Go Back Home </a>
 				</div>
+				
 				
 				
 			</div>
