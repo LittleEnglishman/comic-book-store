@@ -21,8 +21,8 @@ class ComicBook:
 #ver1.0 Creatioon of test data       
 comicBooks = [
     ComicBook("Water Woman", 0, 19.99, "This book sucks, don't buy it.", "/image/bookstore-cat.jpg"),
-    ComicBook("Not Water Woman", 13, 15.99, "This book is very good thus you should buy it.", "/image/bookstore-cat.jpg"),
-    ComicBook("Wagon Wars", 26, 8.49, "In a world full of wagons, one wagon will destroy them all!", "/image/bookstore-cat.jpg")
+    ComicBook("Not Water Woman", 1, 15.99, "This book is very good thus you should buy it.", "/image/bookstore-cat.jpg"),
+    ComicBook("Wagon Wars", 3, 8.49, "In a world full of wagons, one wagon will destroy them all!", "/image/bookstore-cat.jpg")
     ]
 
 #Images
