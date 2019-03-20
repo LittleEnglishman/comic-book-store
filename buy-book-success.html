@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	% include('shared/head.html')
+	% include('shared/Header.html')
+
+	<body class="grey lighten-4">
+
+		<div class="divider"></div>
+		<!--sad main container-->
+		<div class="container white">
+		
+			<!-- Title -->
+			<h2 class="center-align"> Congratulations! The book will be sent you you straight away</h2>
+			<div style="margin-left: 10px; margin-right: 10px;" class="divider"></div>
+			
+			<div class="row">
+			
+				<!-- Main Image -->
+				<div class = "col m4"> 
+					 <img class="responsive-img" width="400" src="{{comic.image}}">
+				</div>
+				
+				<!-- Description -->
+				<div class = "col m4">
+					<h3> {{comic.title}} </h3>
+					<p> {{comic.description}} <br /><br /><br /><br /></p>
+					<h5> In stock: {{comic.stock}} </h5>
+					
+					<!-- Back buttons -->
+					<a href="/book-list" class="button6">Back to Shopping</a>
+					<a href="/"> Go Back Home </a>
+				</div>
+				
+				
+				
+			</div>
+			
+		</div>
+
+	</body>
+</html>
