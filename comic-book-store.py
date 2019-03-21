@@ -81,7 +81,15 @@ def buy_book_success(comic_id):
             break
     data = dict(comic = found_comic)
     found_comic.stock -= 1
-    return data     
+    return data   
+
+#ver1.4 Restock Page
+@route("/restock-page")
+@view('restock-page')
+def restock_page():
+    data = dict(comics = comicBooks)
+    return data
+    
     
 #reloader = True breaks the code? Only at home PC though???? apparantly is a server issue
 run(host='localhost', port=8080, debug=True)

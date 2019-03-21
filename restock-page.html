@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	% include('shared/head.html')
+	% include('shared/Header.html')
+	<header>
+	
+	
+	
+	</header>
+	<body class="grey lighten-4">
+
+		<div class="divider"></div>
+		<!--sad main container-->
+		<div class="container white">
+		
+			<!-- Title -->
+			<h2 class="center-align"> Restock Page</h2>
+			<div style="margin-left: 10px; margin-right: 10px;" class="divider"></div>
+			
+			<div class="row">
+				<div class="col s5">
+				% for comic in comics:
+					<div class="card small" style="height: 70px;">
+						<!-- Card Content -->
+						<p> {{comic.title}} </p>
+					</div>
+				% end
+				</div>
+			</div>
+				
+				<!-- Kitty Image -->
+				<div class="col s8">
+					<img style="padding: 10px;" src="image/bookstore-cat.jpg"/>
+				</div>
+			</div>
+			
+		</div>
+
+	</body>
+</html>
