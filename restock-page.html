@@ -24,21 +24,50 @@
 						<!-- Card Content -->
 						<h4> {{comic.title}} </h4>
 						<h6> Current stock: {{comic.stock}} </h6>
-						
-						<form action="#">
-							<p class="range-field">
-								<input type="range" id="rangePicker" min="0" max="100" />
-								<span class="thumb" style="height: 0px; width: 0px; top: 10px; margin-left: 7px; left: 258.223px;"><span class="value">45</span></span>
-							</p>
-							<!-- button for things -->
-							<button class="btn waves-effect waves-light" type="submit" name="action" style="margin: 10px;">Submit
-								<i class="material-icons right">send</i>
-							</button>
-						</form>
         
 					</div>
 				% end
 				</div>
+				
+				<!-- New Book Add-->
+				<div class="card small" style="height: auto;">
+					<div class="col s4" style="float: left; margin: 20px: padding: 20px;">
+						<form action="/new-book-success" method="POST">
+							
+								<!-- First row containing name and dob -->
+							<div class="row">
+								<div class="input-field">
+									<input placeholder="Title" id="inp_title" name="title" type="text" class="validate">
+									<label for="inp_title">Book Title</label>
+								</div>
+								
+								<div class="input-field col s6">
+									<input id="inp_stock" type="number" name="dob" class="validate">
+									<label for="inp_stock">Initial Stock</label>
+								</div>
+							</div>
+								
+								
+							<div class="row">
+								<div class="input-field col s6">
+									<input id="inp_price" type="number" name="email" class="validate">
+									<label for="inp_price">Initial Price</label>
+								</div>
+								
+								<div class="input-field col s6">
+									<input id="inp_desc" type="text" name="desc" class="validate">
+									<label for="inp_desc">Decscription</label>
+								</div>
+							</div>
+							<!-- button for things -->
+							<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+								<i class="material-icons right">send</i>
+							</button>
+						</form>
+					</div>
+				</div>
+				
+				
 			</div>
 				
 				<!-- Kitty Image -->
