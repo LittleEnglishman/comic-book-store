@@ -89,7 +89,19 @@ def buy_book_success(comic_id):
 def restock_page():
     data = dict(comics = comicBooks)
     return data
+ 
+@route("/new-book-success", method="POST")
+@view("new-book-success")
+def new_book_success():
+    title = request.forms.get("title")
+    stock = request.forms.get("stock")
+    price = request.forms.get("price")
+    description = request.forms.get("description")
+    image = "/image/bookstore-cat.jpg"
     
+    new_comic = ComicBook(title, stock, price, description, image)
+    comicBooks.append(new_comic)
+
     
 #reloader = True breaks the code? Only at home PC though???? apparantly is a server issue
 run(host='localhost', port=8080, debug=True)
