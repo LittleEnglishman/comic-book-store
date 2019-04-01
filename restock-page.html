@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	% include('shared/head.html')
+	% include('shared/Header.html')
+	<header>
+	
+	
+	
+	</header>
+	<body class="grey lighten-4">
+
+		<div class="divider"></div>
+		<!--sad main container-->
+		<div class="container white">
+		
+			<!-- Title -->
+			<h2 class="center-align"> Restock Page</h2>
+			<div style="margin-left: 10px; margin-right: 10px;" class="divider"></div>
+			
+			<div class="row">
+				<div class="col s5">
+				% for comic in comics:
+					<div class="card small" style="height: 200px; padding: 5px">
+						<h4> {{comic.title}} </h4>
+						<h6> Current stock: {{comic.stock}} </h6>
+						<div class="card-action">
+							<a href="/restock-success/{{comic.id}}" class="button6">Restock Now</a>
+						</div>
+					</div>
+				% end
+				</div>
+				
+				<!-- New Book Add-->
+				<div class="card small" style="height: auto;">
+					<div class="col s4" style="float: left; margin: 20px: padding: 20px;">
+						<form action="/new-book-success" method="POST">
+							
+								<!-- First row containing name and dob -->
+							<div class="row">
+								<div class="input-field">
+									<input placeholder="Title" id="inp_title" name="title" type="text" class="validate">
+									<label for="inp_title">Book Title</label>
+								</div>
+								
+								<div class="input-field col s6">
+									<input id="inp_stock" type="number" name="dob" class="validate">
+									<label for="inp_stock">Initial Stock</label>
+								</div>
+							</div>
+								
+								
+							<div class="row">
+								<div class="input-field col s6">
+									<input id="inp_price" type="number" name="price" class="validate">
+									<label for="inp_price">Initial Price</label>
+								</div>
+								
+								<div class="input-field col s6">
+									<input id="inp_desc" type="text" name="description" class="validate">
+									<label for="inp_desc">Decscription</label>
+								</div>
+							</div>
+							<!-- button for things -->
+							<!--class="btn waves-effect waves-light"-->
+							<button  class="button6" type="submit" name="action">Submit
+								<i class="material-icons right">send</i>
+							</button>
+						</form>
+					</div>
+				</div>
+				
+				
+			</div>
+				
+				<!-- Kitty Image -->
+				<div class="col s8">
+					<img style="padding: 10px;" src="image/bookstore-cat.jpg"/>
+				</div>
+			</div>
+			
+		</div>
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+	</body>
+</html>

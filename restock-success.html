@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	% include('shared/head.html')
+	% include('shared/Header.html')
+	<header>
+	
+	
+	
+	</header>
+	<body class="grey lighten-4">
+
+		<div class="divider"></div>
+		<!--sad main container-->
+		<div class="container white">
+		
+			<!-- Title -->
+			<h2 class="center-align"> Restock Book Page</h2>
+			<div style="margin-left: 10px; margin-right: 10px;" class="divider"></div>
+			
+			<div class="row">
+				<form  action="/restock-action/{{comic.id}}" method="POST">
+					<div class="input-field col s6">
+						<input id="inp_restock" type="number" name="restock" class="validate">
+						<label for="inp_desc">Restock</label>
+					</div>
+					
+					<!-- button for things -->                                                                                                    
+					<button  class="button6" type="submit" name="action">Submit
+						<i class="material-icons right">send</i>
+					</button>
+				</form>
+				
+
+			</div>
+			
+		</div>
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+	</body>
+</html>

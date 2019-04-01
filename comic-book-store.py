@@ -81,7 +81,53 @@ def buy_book_success(comic_id):
             break
     data = dict(comic = found_comic)
     found_comic.stock -= 1
-    return data     
+    return data   
+
+#ver1.4 Restock Page
+@route("/restock-page")
+@view('restock-page')
+def restock_page():
+    data = dict(comics = comicBooks)
+    return data
+
+#ver1.4 Success page for a new book 
+@route("/new-book-success", method="POST")
+@view("new-book-success")
+def new_book_success():
+    title = request.forms.get("title")
+    stock = request.forms.get("stock")
+    price = request.forms.get("price")
+    description = request.forms.get("description")
+    image = "/image/bookstore-cat.jpg"
+    
+    new_comic = ComicBook(title, stock, price, description, image)
+    comicBooks.append(new_comic)
+
+#Ver1.4.1 Restock Success Page for the actual restocking of a book
+@route("/restock-success/<comic_id>")
+@view("restock-success")
+def restock_success(comic_id):
+    comic_id = int(comic_id)
+    found_comic = None
+    for comic in comicBooks:
+        if comic.id == comic_id:
+            found_comic = comic
+            break
+    data = dict(comic = found_comic)
+    return data 
+
+@route("/restock-action/<comic_id>", method="POST")
+@view("restock-action")
+def restock_action(comic_id):
+    comic_id = int(comic_id)
+    found_comic = None
+    for comic in comicBooks:
+        if comic.id == comic_id:
+            found_comic = comic
+            break
+    data = dict(comic = found_comic)
+    found_comic.stock += int(request.forms.get("restock"))
+    return data 
     
 #reloader = True breaks the code? Only at home PC though???? apparantly is a server issue
 run(host='localhost', port=8080, debug=True)
