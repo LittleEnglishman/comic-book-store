@@ -18,7 +18,7 @@
 			<div style="margin-left: 10px; margin-right: 10px;" class="divider"></div>
 			
 			<div class="row">
-				<form  action="/restock-success-action" method="POST">
+				<form  action="/restock-action/{{comic.id}}" method="POST">
 					<div class="input-field col s6">
 						<input id="inp_restock" type="number" name="restock" class="validate">
 						<label for="inp_desc">Restock</label>

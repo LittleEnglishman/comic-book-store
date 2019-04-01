@@ -107,7 +107,27 @@ def new_book_success():
 @route("/restock-success/<comic_id>")
 @view("restock-success")
 def restock_success(comic_id):
-    pass
+    comic_id = int(comic_id)
+    found_comic = None
+    for comic in comicBooks:
+        if comic.id == comic_id:
+            found_comic = comic
+            break
+    data = dict(comic = found_comic)
+    return data 
+
+@route("/restock-action/<comic_id>", method="POST")
+@view("restock-action")
+def restock_action(comic_id):
+    comic_id = int(comic_id)
+    found_comic = None
+    for comic in comicBooks:
+        if comic.id == comic_id:
+            found_comic = comic
+            break
+    data = dict(comic = found_comic)
+    found_comic.stock += int(request.forms.get("restock"))
+    return data 
     
 #reloader = True breaks the code? Only at home PC though???? apparantly is a server issue
 run(host='localhost', port=8080, debug=True)
