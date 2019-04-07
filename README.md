@@ -18,3 +18,6 @@ Adding new book on restock page
 
 #Ver1.4.1
 Restocking single books functionality
+
+#Ver1.5
+Cleaned up a bit for Mr Wales
